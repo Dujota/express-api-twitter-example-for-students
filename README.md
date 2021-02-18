@@ -1,4 +1,11 @@
 ## Express API + Twitter API v2
+### Overview
+Using social media client API's to enhance the usability or functionality of a project is very prevalent for modern web apps and student projects.
+
+We have a small api that returns recent tweets in json for a given query string called search. Navigating to `/api/tweets?search=nodejs` would search all recent tweets that reference nodejs. We also prune out re-tweets and have a max_limit hardcoded at 30.
+
+After our express server gets a response from twitter (ie: all the tweets) we then forward that back up to the client as json. (think React/Vue etc.)
+
 
 Requirements:
 
