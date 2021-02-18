@@ -7,8 +7,8 @@ const client = new Twitter({
 });
 
 // you pass the request and res object, which is different than the twitter response object
-const getRecentTweets = (req, res) => {
-  client.get('https://api.twitter.com/2/tweets/search/recent?query=nodejs -is:retweet&max_results=30', function (error, tweets, response) {
+const getRecentTweets = (req, res, query) => {
+  client.get(`https://api.twitter.com/2/tweets/search/recent?query=${query} -is:retweet`, function (error, tweets, response) {
     if (error) throw error;
 
     res.json(tweets); // This line sends the tweets to the client making the http request. IT MUST be included here otherwise we lose reference to the tweets object
